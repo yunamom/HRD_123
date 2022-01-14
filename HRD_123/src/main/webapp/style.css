@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body{
+	font-family : gulim;
+	margin : 0px;
+}
+header{
+	position : fixed;
+	top : 0px;
+	width : 100%;
+	height : 60px;
+	line-height : 60px;
+	background-color : pink;
+	color : white;
+	text-align : center;
+	font-size : 30px;
+}
+nav{
+	position : fixed;
+	top : 60px;
+	width : 100%;
+	height : 20px;
+	line-height : 20px;
+	background-color : #777777;
+}
+a{	
+	text-decoration : none;
+	color : white;
+	padding-left : 1rem;
+	padding-right : 1rem;
+}
+section{
+	position : fixed;
+	top : 80px;
+	width : 100%;
+	height : 100%;
+	background-color : #dddddd;
+	text-align : center;
+}
+form {
+	display : flex;	
+	justify-content : center;
+	text-align : center;
+}
+.box {
+	padding : 1rem;
+}
+
+footer{
+	position : fixed;
+	bottom : 0px;
+	width : 100%;
+	height : 20px;
+	line-height : 20px;
+	background-color : pink;
+	text-align : center;
+	font-size : 10px;
+	color : white;
+}
