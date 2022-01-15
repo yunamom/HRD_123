@@ -13,14 +13,14 @@ try{
 	String sql = " SELECT";
 			sql+=" m1.custno,"; //2개의 테이블을 JOIN 하기때문에  
 			sql+=" m1.custname,"; //앞에 어떤 테이블에서 가져오는 Attribute 인지 명시해준다.
-			sql+=" m1.grade,";
+			sql+=" if(m1.grade='A','VIP',if(m1.grade='B','일반','직원'))grade,";
 			sql+=" sum(price) price"; //총합을 구하는 함수작성
 			sql+=" FROM";
 			sql+=" member_tbl_02 m1,";
 			sql+=" money_tbl_02 m2 ";
 			sql+=" WHERE m1.custno = m2.custno";
 			sql+=" GROUP BY m1.custno"; //*함수는 SELECT , HAVING BY 에만 사용할수있다.
-			sql+=" ORDER BY sum(m2.price) DESC"; //오름차순 정렬
+			sql+=" ORDER BY sum(price) DESC"; //오름차순 정렬
 			
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	ResultSet rs = stmt.executeQuery(); //stmt 통해서 sql 실행 결과
@@ -60,12 +60,10 @@ try{
 		<th>매출</th>
 	</tr>
 	<%for(String e[]:memberList){%>
-	<tr>
-		<%for(String f:e){%>
-		<td><%=f%></td>
-		<%}%>
-	</tr>
-	<%}%>
+	<tr><%for(String f:e){%>
+		<td><%=f%></td><%}%>
+	</tr><%}%>
+	
 	</table>
 </form>
 </div>
