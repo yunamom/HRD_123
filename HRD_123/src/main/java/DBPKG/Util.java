@@ -12,8 +12,8 @@ public class Util {
          Class.forName("com.mysql.cj.jdbc.Driver");
          //접속정보 세팅
          Connection con = DriverManager.getConnection(url,name,pw);
-        
-         
+              
          return con;
+         
 	 }
 }
