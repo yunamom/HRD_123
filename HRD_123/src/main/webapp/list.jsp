@@ -18,8 +18,26 @@ ArrayList<String[]> member = new ArrayList<String[]>();
 try {
 	Connection conn = Util.getConnection(); //DB연결
 	
-	String sql = " SELECT * FROM member_tbl_02";
-	//명령문보내기
+	String sql = " SELECT";
+		sql+= " custno,";
+		sql+= " custname,";
+		sql+= " phone,";
+		sql+= " address,";
+		sql+= " joindate,";
+		sql+= " if(grade='A','VIP',";
+		sql+= " if(grade='B','일반',";
+		sql+= " if(grade='C','직원',' '))) grade,";
+		sql+= " if(city='01','서울',";
+		sql+= " if(city='10','인천',";
+		sql+= " if(city='20','성남',";
+		sql+= " if(city='30','대전',";
+		sql+= " if(city='40','광주',";
+		sql+= " if(city='60','부산',' ')))))) city";
+		sql+= " FROM member_tbl_02";
+		
+		/* sql if 문을 이용해서 작성해보았다..if 문이 9개가 들어갔는데
+		여러방법을통해서 구현해보는중!
+		명령문보내기*/
 	
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	ResultSet rs = stmt.executeQuery(); //stmt 통해서 sql 실행 결과
@@ -59,7 +77,7 @@ catch (Exception e) {
 	
 	<%for(int i=0; i<member.size(); i++) {%>
 	<tr>
-		<td><a href="join.jsp?custno"><%=member.get(i)[0]%></a></td>		
+		<td><a href="modify.jsp?custno=<%=member.get(i)[0]%>"><%=member.get(i)[0]%></a></td>		
 		<%for(int j=1; j<7; j++) {%>
 		<td><%=member.get(i)[j]%></td>
 		<%}%>

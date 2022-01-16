@@ -13,7 +13,8 @@ try{
 	String sql = " SELECT";
 			sql+=" m1.custno,"; //2개의 테이블을 JOIN 하기때문에  
 			sql+=" m1.custname,"; //앞에 어떤 테이블에서 가져오는 Attribute 인지 명시해준다.
-			sql+=" if(m1.grade='A','VIP',if(m1.grade='B','일반','직원'))grade,";
+			sql+=" if(m1.grade='A','VIP',";
+			sql+=" if(m1.grade='B','일반','직원'))grade,";
 			sql+=" sum(price) price"; //총합을 구하는 함수작성
 			sql+=" FROM";
 			sql+=" member_tbl_02 m1,";
