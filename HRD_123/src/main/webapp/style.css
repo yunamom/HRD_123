@@ -2,25 +2,25 @@
 
 body{
 	font-family : gulim;
-	margin : 0px;
+	margin : 0 auto;
 }
 header{
 	position : fixed;
 	top : 0px;
 	width : 100%;
-	height : 70px;
-	line-height : 70px;
-	background-color : #b1b4e6;
+	height : 100px;
+	line-height : 100px;
+	background-color : rgb(177, 187, 226);
 	color : white;
 	text-align : center;
 	font-size : 30px;
 }
 nav{
 	position : fixed;
-	top : 70px;
+	top : 100px;
 	width : 100%;
-	height : 30px;
-	line-height : 30px;
+	height : 40px;
+	line-height : 40px;
 	background-color : #777777;
 }
 a{	
@@ -31,7 +31,7 @@ a{
 }
 section{
 	position : fixed;
-	top : 100px;
+	top : 140px;
 	width : 100%;
 	height : 100%;
 	background-color : #dddddd;
@@ -45,14 +45,13 @@ form {
 .box {
 	padding : 1rem;
 }
-
 footer{
 	position : fixed;
 	bottom : 0px;
 	width : 100%;
-	height : 20px;
-	line-height : 20px;
-	background-color : #b1b4e6;
+	height : 30px;
+	line-height : 30px;
+	background-color :  rgb(177, 187, 226);
 	text-align : center;
 	font-size : 10px;
 	color : white;

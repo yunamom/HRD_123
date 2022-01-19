@@ -7,8 +7,6 @@
 request.setCharacterEncoding("UTF-8");
 
 
-
-
 int custno = Integer.parseInt(request.getParameter("custno"));
 String custname = request.getParameter("custname");
 String phone = request.getParameter("phone");
@@ -56,7 +54,7 @@ location="join.jsp";
 %>
 <script>
 alert("회원수정 완료!");
-location="join.jsp";
+location="list.jsp";
 </script>
 <%		
 	break;

@@ -52,11 +52,11 @@ catch (Exception e) {
 </tr>
 <tr>
 	<td>회원성명</td>
-	<td align="left"><input type="text" name="custname" placeholder="이름"></td>
+	<td align="left"><input type="text" name="custname"></td>
 </tr>
 <tr>
 	<td>회원전화</td>
-	<td align="left"><input type="text" name="phone" placeholder="000-000-000"></td>
+	<td align="left"><input type="text" name="phone" placeholder="010-0000-0000"></td>
 </tr>
 <tr>
 	<td>통신사</td>
@@ -73,15 +73,30 @@ catch (Exception e) {
 </tr>
 <tr>
 	<td>고객등급[A:VIP,B:일반,C:직원]</td>
-	<td align="left"><input type="text" name="grade" maxlength='1' placeholder="A"></td>
+	<td align="left">
+		<select name="grade">
+	<option value="A">A</option>
+	<option value="B">B</option>
+	<option value="C">C</option>
+		</select>
+	</td>
 </tr>
 <tr>
 	<td>도시코드</td>
-	<td align="left"><input type="text" name="city" maxlength='2' placeholder="01"></td>
+	<td align="left">
+		<select name="city">
+	<option value="01">01</option>
+	<option value="10">10</option>
+	<option value="20">20</option>
+	<option value="30">30</option>
+	<option value="40">40</option>
+	<option value="60">60</option>
+		</select>
+	</td>
 </tr>
 <tr>
 	<td colspan="2">
-	<button type="submit" onclick="check();return false;">등록</button>
+	<button type="submit" onclick="return check()">등록</button>
 	<button type="button" onclick="location='list.jsp'">조회</button>
 	</td>
 </tr>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="DBPKG.*" %>
+<%@ page import="DBPKG.Util" %>
 <%@ page import="java.sql.*" %>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -62,7 +62,7 @@ try{
 	</tr>
 	<%for(String e[]:memberList){%>
 	<tr><%for(String f:e){%>
-		<td><%=f%></td><%}%>
+		<td><%=f %></td><%}%>
 	</tr><%}%>
 	
 	</table>

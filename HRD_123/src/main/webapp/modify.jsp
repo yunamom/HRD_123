@@ -93,15 +93,39 @@ catch (Exception e) {
 </tr>
 <tr>
 	<td>고객등급[A:VIP,B:일반,C:직원]</td>
-	<td align="left"><input type="text" name="grade" value="<%=grade%>"></td>
+	<td align="left">
+		<select name="grade">
+	<option value="A"
+	<%if(grade.equals("A")) out.print("selected");%>>A</option>
+	<option value="B"
+	<%if(grade.equals("B")) out.print("selected");%>>B</option>
+	<option value="C"
+	<%if(grade.equals("C")) out.print("selected");%>>C</option>
+		</select>
+	</td>
 </tr>
 <tr>
 	<td>도시코드</td>
-	<td align="left"><input type="text" name="city" value="<%=city%>"></td>
+	<td align="left">
+		<select name="city">
+	<option value="01"
+	<%if(city.equals("01")) out.print("selected");%>>01</option>
+	<option value="10"
+	<%if(city.equals("10")) out.print("selected");%>>10</option>
+	<option value="20"
+	<%if(city.equals("20")) out.print("selected");%>>20</option>
+	<option value="30"
+	<%if(city.equals("30")) out.print("selected");%>>30</option>
+	<option value="40"
+	<%if(city.equals("40")) out.print("selected");%>>40</option>
+	<option value="60"
+	<%if(city.equals("60")) out.print("selected");%>>60</option>
+		</select>
+	</td>
 </tr>
 <tr>
 	<td colspan="2">
-	<button type="submit" onclick="check();return false;">수정</button>
+	<button type="submit" onclick="return check()">수정</button>
 	<button type="button" onclick="location='delete.jsp?custno=<%=custno%>'">삭제</button>
 	</td>
 </tr>

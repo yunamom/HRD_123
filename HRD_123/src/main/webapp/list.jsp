@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="DBPKG.*" %>
+<%@ page import="DBPKG.Util" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,19 +23,17 @@ try {
 		sql+= " custname,";
 		sql+= " phone,";
 		sql+= " address,";
-		sql+= " joindate,";
+		sql+= " DATE_FORMAT(joindate,'%Y년 %m월 %d일') joindate,";
 		sql+= " if(grade='A','VIP',";
-		sql+= " if(grade='B','일반',";
-		sql+= " if(grade='C','직원',' '))) grade,";
+		sql+= " if(grade='B','일반','직원')) grade,";
 		sql+= " if(city='01','서울',";
 		sql+= " if(city='10','인천',";
 		sql+= " if(city='20','성남',";
 		sql+= " if(city='30','대전',";
-		sql+= " if(city='40','광주',";
-		sql+= " if(city='60','부산',' ')))))) city";
+		sql+= " if(city='40','광주','부산'))))) city";
 		sql+= " FROM member_tbl_02";
 		
-		/* sql if 문을 이용해서 작성해보았다..if 문이 9개가 들어갔는데
+		/* sql if 문을 이용해서 작성해보았다..if 문이 7개가 들어갔는데
 		여러방법을통해서 구현해보는중!
 		명령문보내기*/
 	
